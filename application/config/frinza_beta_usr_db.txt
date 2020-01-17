@@ -1,0 +1,6 @@
+Db name: frinza_beta_db
+Username: frinza_beta_usr
+Password: |-_|)\SA@1234!
+
+
+SSH Key password: 1]%2?r{ow6Ip

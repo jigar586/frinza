@@ -1,0 +1,54 @@
+[12-Dec-2018 13:55:22 Asia/Kolkata] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/o7odv8fhlclr/public_html/system/libraries/Session/drivers/Session_files_driver.php on line 212
+[19-Dec-2018 01:50:25 Asia/Kolkata] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/o7odv8fhlclr/public_html/system/libraries/Session/drivers/Session_files_driver.php on line 212
+[21-Dec-2018 19:38:02 Asia/Kolkata] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/o7odv8fhlclr/public_html/system/libraries/Session/drivers/Session_files_driver.php on line 212
+[24-Dec-2018 08:39:05 Asia/Kolkata] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/o7odv8fhlclr/public_html/system/libraries/Session/drivers/Session_files_driver.php on line 212
+[24-Dec-2018 16:47:27 Asia/Kolkata] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/o7odv8fhlclr/public_html/system/libraries/Session/drivers/Session_files_driver.php on line 212
+[28-Dec-2018 22:51:44 Asia/Kolkata] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/o7odv8fhlclr/public_html/system/libraries/Session/drivers/Session_files_driver.php on line 212
+[29-Dec-2018 02:48:32 Asia/Kolkata] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/o7odv8fhlclr/public_html/system/libraries/Session/drivers/Session_files_driver.php on line 212
+[29-Dec-2018 06:55:32 Asia/Kolkata] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/o7odv8fhlclr/public_html/system/libraries/Session/drivers/Session_files_driver.php on line 212
+[29-Dec-2018 21:19:48 Asia/Kolkata] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/o7odv8fhlclr/public_html/system/libraries/Session/drivers/Session_files_driver.php on line 212
+[30-Dec-2018 07:45:32 Asia/Kolkata] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/o7odv8fhlclr/public_html/system/libraries/Session/drivers/Session_files_driver.php on line 212
+[30-Dec-2018 17:48:54 Asia/Kolkata] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/o7odv8fhlclr/public_html/system/libraries/Session/drivers/Session_files_driver.php on line 212
+[06-Feb-2019 21:34:00 Asia/Kolkata] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/o7odv8fhlclr/public_html/system/libraries/Session/drivers/Session_files_driver.php on line 212
+[07-Feb-2019 13:00:20 Asia/Kolkata] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/o7odv8fhlclr/public_html/system/libraries/Session/drivers/Session_files_driver.php on line 212
+[09-Feb-2019 15:13:24 Asia/Kolkata] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/o7odv8fhlclr/public_html/system/libraries/Session/drivers/Session_files_driver.php on line 212
+[12-Feb-2019 10:59:19 Asia/Kolkata] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/o7odv8fhlclr/public_html/system/libraries/Session/drivers/Session_files_driver.php on line 212
+[13-Feb-2019 19:39:44 Asia/Kolkata] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/o7odv8fhlclr/public_html/system/libraries/Session/drivers/Session_files_driver.php on line 212
+[24-Apr-2019 15:23:32 UTC] PHP Parse error:  syntax error, unexpected 'define' (T_STRING), expecting ',' or ';' in /home/frinza/public_html/frinza.php on line 58
+[24-Apr-2019 15:24:37 UTC] PHP Parse error:  syntax error, unexpected 'define' (T_STRING), expecting ',' or ';' in /home/frinza/public_html/frinza.php on line 58
+[30-Apr-2019 12:36:48 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/UserModel.php on line 205
+[03-May-2019 16:08:27 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/UserModel.php on line 205
+[03-May-2019 17:46:28 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/UserModel.php on line 205
+[04-May-2019 18:12:37 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/UserModel.php on line 205
+[09-May-2019 20:51:26 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/UserModel.php on line 100
+[09-May-2019 21:55:04 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/UserModel.php on line 100
+[09-May-2019 21:55:20 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/UserModel.php on line 100
+[10-May-2019 07:38:12 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/UserModel.php on line 100
+[11-May-2019 03:36:39 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/UserModel.php on line 205
+[11-May-2019 14:38:01 Asia/Kolkata] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/frinza/public_html/system/libraries/Session/drivers/Session_files_driver.php on line 210
+[15-May-2019 05:38:15 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/UserModel.php on line 205
+[15-May-2019 21:36:18 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/UserModel.php on line 205
+[16-May-2019 00:17:43 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/UserModel.php on line 205
+[18-May-2019 06:06:02 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/UserModel.php on line 205
+[21-May-2019 21:50:25 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/UserModel.php on line 100
+[21-May-2019 21:50:26 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/UserModel.php on line 100
+[22-May-2019 11:52:00 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/UserModel.php on line 205
+[23-May-2019 02:08:29 Asia/Kolkata] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/frinza/public_html/system/libraries/Session/drivers/Session_files_driver.php on line 212
+[25-May-2019 06:21:36 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/UserModel.php on line 205
+[27-May-2019 11:01:48 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/AdminModel.php on line 374
+[27-May-2019 11:01:50 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/AdminModel.php on line 374
+[27-May-2019 11:01:58 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/AdminModel.php on line 374
+[27-May-2019 11:02:04 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/AdminModel.php on line 374
+[27-May-2019 11:02:20 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/AdminModel.php on line 374
+[27-May-2019 11:02:40 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/AdminModel.php on line 374
+[27-May-2019 16:49:56 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/UserModel.php on line 205
+[27-May-2019 20:22:16 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/UserModel.php on line 100
+[27-May-2019 20:22:18 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/UserModel.php on line 100
+[28-May-2019 11:51:52 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/UserModel.php on line 205
+[01-Jun-2019 18:24:50 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/UserModel.php on line 205
+[02-Jun-2019 16:49:44 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/UserModel.php on line 205
+[05-Jun-2019 13:28:32 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/UserModel.php on line 205
+[07-Jun-2019 22:49:58 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/UserModel.php on line 205
+[09-Jun-2019 02:02:00 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/UserModel.php on line 205
+[16-Jun-2019 03:13:31 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/UserModel.php on line 205
+[18-Jun-2019 15:13:28 Asia/Kolkata] PHP Fatal error:  Call to a member function result() on boolean in /home/frinza/public_html/application/models/UserModel.php on line 100
