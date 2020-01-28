@@ -1213,7 +1213,8 @@ input[type=text].noui-height-helper:not(.noUi-target)[data-fouc] {
     .select2-selection--multiple:not([class*=bg-]):not([class*=border-]) {
       border-color: #ddd; }
   .select2-selection--multiple .select2-selection__rendered {
-    overflow: hidden;
+    overflow: auto;
+    max-height: 250px;
     text-overflow: ellipsis;
     white-space: nowrap;
     list-style: none;

@@ -49,123 +49,121 @@
 			
 			if (@count($$ijkl) != 0) {
 				if ($mnbv % 2 == 0) { ?>
-                <section class="bestsell-pro noMargin">
-                    <div class="container noPadding">
-                        <div class="related-pro">
-                            <div class="slider-items-products">
-                                <div class="related-block noMargin" style="margin:0;">
-                                    <div id="related-products-slider" class="product-flexslider hidden-buttons">
-                                        <div class="home-block-inner">
-                                            <div class="block-title">
-                                                <h2>
-                                                    <?php
-                                                        $asdkasdaosdk = explode(' ', $$jklm);
-                                                        if (count($asdkasdaosdk) > 1) {
-                                                            echo @$asdkasdaosdk[0];
-                                                            unset($asdkasdaosdk[0]);
-                                                            echo '<br><em>'.implode(' ',$asdkasdaosdk).'</em>';
-                                                        } else {
-                                                            echo $$jklm;
-                                                        }
-                                                    ?>
-                                                </h2>
-                                            </div>
-                                            <div class="pretext"><?= $$jkdesc ?></div>
-                                            <?php $catPath = $i == 0 ? 'cc' : 'c'; ?>
-                                            <a href="<?= base_url(url_title($$jklm,'-',TRUE).'/'.$catPath.$$klmn)?>"
-                                                class="view_more_bnt">View All</a>
+            <section class="bestsell-pro noMargin">
+                <div class="container noPadding">
+                    <div class="related-pro">
+                        <div class="slider-items-products">
+                            <div class="related-block noMargin" style="margin:0;">
+                                <div id="related-products-slider" class="product-flexslider hidden-buttons">
+                                    <div class="home-block-inner">
+                                        <div class="block-title">
+                                            <h2>
+                                                <?php
+                                                    $asdkasdaosdk = explode(' ', $$jklm);
+                                                    if (count($asdkasdaosdk) > 1) {
+                                                        echo @$asdkasdaosdk[0];
+                                                        unset($asdkasdaosdk[0]);
+                                                        echo '<br><em>'.implode(' ',$asdkasdaosdk).'</em>';
+                                                    } else {
+                                                        echo $$jklm;
+                                                    }
+                                                ?>
+                                            </h2>
                                         </div>
-                                        <div class="slider-items slider-width-col4 products-grid block-content">
-                                            <?php foreach ($$ijkl as $rp) {
-                                                    $imgs = json_decode($rp->product_img);
-                                            ?>
-                                            <div class="item">
-                                                <div class="item-inner">
-                                                    <div class="item-img">
-                                                        <div class="item-img-info">
-                                                            <a class="product-image" title="<?= $rp->product_title ?>"
-                                                                href="<?= base_url('').url_title($rp->product_title,'-',TRUE).'/p'.$rp->product_id ?>">
-                                                                <img alt="<?= $rp->product_title ?>" class="lazy"
-                                                                    src="<?= PLACEHOLDER_IMAGE ?>"
-                                                                    data-src="<?= FOLDER_ASSETS_TEMPLATEPRODUCT.$imgs[0] ?>">
-                                                            </a>
-                                                            <?php
-                                                                if (compareDate($rp->created_at,3)) { ?>
-                                                            <div class="new-label new-top-left">new</div>
-                                                            <?php  } ?>
-                                                            <div class="box-hover">
-                                                                <ul class="add-to-links">
-                                                                    <?php if(0){ ?>
-                                                                    <li><a class="link-quickview" data-toggle="modal"
-                                                                            data-target="#quickView" href="javascript:void(0)"
-                                                                            onclick="quickView(<?= $rp->product_id ?>)">Quick
-                                                                            View</a>
-                                                                    </li>
-                                                                    <?php } ?>
-                                                                    <li><a class="link-wishlist" href="javascript:void(0)"
-                                                                            onclick="addToWish(<?= $rp->product_id ?>)">Wishlist</a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
+                                        <div class="pretext"><?= $$jkdesc ?></div>
+                                        <?php $catPath = $i == 0 ? 'cc' : 'c'; ?>
+                                        <a href="<?= base_url(url_title($$jklm,'-',TRUE).'/'.$catPath.$$klmn)?>"
+                                            class="view_more_bnt">View All</a>
+                                    </div>
+                                    <div class="slider-items slider-width-col4 products-grid block-content">
+                                        <?php foreach ($$ijkl as $rp) {
+                                                $imgs = json_decode($rp->product_img);
+                                        ?>
+                                        <div class="item">
+                                            <div class="item-inner">
+                                                <div class="item-img">
+                                                    <div class="item-img-info">
+                                                        <a class="product-image" title="<?= $rp->product_title ?>"
+                                                            href="<?= base_url('').url_title($rp->product_title,'-',TRUE).'/p'.$rp->product_id ?>">
+                                                            <img alt="<?= $rp->product_title ?>" class="lazy"
+                                                                src="<?= PLACEHOLDER_IMAGE ?>"
+                                                                data-src="<?= FOLDER_ASSETS_TEMPLATEPRODUCT.$imgs[0] ?>">
+                                                        </a>
+                                                        <?php
+                                                            if (compareDate($rp->created_at,3)) { ?>
+                                                        <div class="new-label new-top-left">new</div>
+                                                        <?php  } ?>
+                                                        <div class="box-hover">
+                                                            <ul class="add-to-links">
+                                                                <?php if(0){ ?>
+                                                                <li><a class="link-quickview" data-toggle="modal"
+                                                                        data-target="#quickView" href="javascript:void(0)"
+                                                                        onclick="quickView(<?= $rp->product_id ?>)">Quick
+                                                                        View</a>
+                                                                </li>
+                                                                <?php } ?>
+                                                                <li><a class="link-wishlist" href="javascript:void(0)"
+                                                                        onclick="addToWish(<?= $rp->product_id ?>)">Wishlist</a>
+                                                                </li>
+                                                            </ul>
                                                         </div>
                                                     </div>
-                                                    <div class="item-info">
-                                                        <div class="info-inner">
-                                                            <div class="item-title">
-                                                                <h4>
-                                                                    <a title="<?= $rp->product_title ?>" href="<?= base_url('').url_title($rp->product_title,'-',TRUE).'/p'.$rp->product_id ?>"><?= $rp->product_title ?></a>
-                                                                </h4>
-                                                            </div>
-                                                            <div class="rating">
-                                                                <div class="ratings">
-                                                                    <div class="rating-box">
-                                                                        <div class="rating" style="width: <?= getAvgRating($rp->product_id) ?>%">
-                                                                        </div>
+                                                </div>
+                                                <div class="item-info">
+                                                    <div class="info-inner">
+                                                        <div class="item-title">
+                                                            <h4>
+                                                                <a title="<?= $rp->product_title ?>" href="<?= base_url('').url_title($rp->product_title,'-',TRUE).'/p'.$rp->product_id ?>"><?= $rp->product_title ?></a>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="rating">
+                                                            <div class="ratings">
+                                                                <div class="rating-box">
+                                                                    <div class="rating" style="width: <?= getAvgRating($rp->product_id) ?>%">
                                                                     </div>
-                                                                    <p class="rating-links"> <a href="#"><?= getRatingCount($rp->product_id) ?> Review(s)</a> <span class="separator">|</span> <a href="#">Add Review</a> </p>
                                                                 </div>
+                                                                <p class="rating-links"> <a href="#"><?= getRatingCount($rp->product_id) ?> Review(s)</a> <span class="separator">|</span> <a href="#">Add Review</a> </p>
                                                             </div>
-                                                            <div class="item-content">
-                                                                <div class="item-price">
-                                                                    <div class="price-box">
-                                                                        <?php
-                                                                            $price = $rp->price;
-                                                                            $sPrice = offeredPrice($price,$rp->product_id,$rp->child_id,$rp->category_id);
-                                                                            if ($price > $sPrice) { ?>
-                                                                        <p class="special-price">
-                                                                            <span class="price-label">Special Price</span>
-                                                                            <span class="price">₹<?= $sPrice ?></span>
-                                                                        </p>
-                                                                        <p class="old-price">
-                                                                            <span class="price-label">Regular Price:</span>
-                                                                            <span class="price">₹<?= $price ?></span>
-                                                                        </p>
-                                                                        <?php } elseif ($price < $sPrice) { ?>
-                                                                        <span class="regular-price">
-                                                                            <span class="price">₹<?= $sPrice ?></span>
-                                                                        </span>
-                                                                        <?php }else{ ?>
-                                                                        <span class="regular-price">
-                                                                            <span class="price">₹<?= $price ?></span>
-                                                                        </span>
-                                                                        <?php } ?>
-                                                                    </div>
+                                                        </div>
+                                                        <div class="item-content">
+                                                            <div class="item-price">
+                                                                <div class="price-box">
+                                                                    <?php
+                                                                        $price = $rp->price;
+                                                                        $sPrice = offeredPrice($price,$rp->product_id,$rp->child_id,$rp->category_id);
+                                                                        if ($price > $sPrice) { ?>
+                                                                    <p class="special-price">
+                                                                        <span class="price-label">Special Price</span>
+                                                                        <span class="price">₹<?= $sPrice ?></span>
+                                                                    </p>
+                                                                    <p class="old-price">
+                                                                        <span class="price-label">Regular Price:</span>
+                                                                        <span class="price">₹<?= $price ?></span>
+                                                                    </p>
+                                                                    <?php } elseif ($price < $sPrice) { ?>
+                                                                    <span class="regular-price">
+                                                                        <span class="price">₹<?= $sPrice ?></span>
+                                                                    </span>
+                                                                    <?php }else{ ?>
+                                                                    <span class="regular-price">
+                                                                        <span class="price">₹<?= $price ?></span>
+                                                                    </span>
+                                                                    <?php } ?>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <?php } ?>
                                         </div>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                </section>
-            <?php  
-                }else{ 
-            ?>
+                    </div>
+            </section>
+        <?php  }else{ ?>
             <section class="featured-pro noMargin">
                 <div class="container noPadding">
                     <div class="slider-items-products">

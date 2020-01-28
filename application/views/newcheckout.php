@@ -72,6 +72,11 @@
 						            <div class="page-title">
 						              <h1>Checkout</h1>
 						            </div>
+						            <input type="hidden" name="language" value="EN"> 
+								    
+								    
+								    <input type="hidden" name="redirect_url" value="https://www.frinza.com/ccavResponseHandler.php"> 
+								    <input type="hidden" name="cancel_url" value="https://www.frinza.com/ccavResponseHandler.php">
 						            <div class="row clearfix row-eq-height">
 						            	<div class="col-md-6 col-sm-12 col-xs-12 bb-1-d">
 						            		 <fieldset>

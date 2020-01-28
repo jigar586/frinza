@@ -10,6 +10,7 @@ function payForOrder($walletpay,$bill,$ship,$msg = '',$pay_method)
 	if (!count($addressData)) {
 		redirect(base_url('checkout'));
 	}
+	$postData = $_POST;
 	$data['firstname'] = $addressData[0]['name'];
 	$data['email'] = $addressData[0]['email'];
 	$data['phone'] = $addressData[0]['contact'];
@@ -63,10 +64,27 @@ function payForOrder($walletpay,$bill,$ship,$msg = '',$pay_method)
 		$_POST['amount'] = 0;
 		return true;
 	}else{
-		$data['amount'] = $amount;
+	    $data['amount'] = $amount;
 		$data['udf4'] = $udf10;
+		
+    // 	$data['billing_address'] = $_POST['billing']['address_1'].$_POST['billing']['address_2'];
+    // 	$data['shipping_address'] = $_POST['shipping']['address_1'].$_POST['shipping']['address_2'];
+    // 	$data['billing_name'] = $_POST['billing']['name'];
+    // 	$data['billing_city'] = $_POST['billing']['city'];
+    // 	$data['billing_state'] = $_POST['billing']['state'];
+    // 	$data['billing_zip'] = $_POST['billing']['pin_code'];
+    // 	$data['billing_tel'] = $_POST['billing']['contact'];
+    // 	$data['billing_email'] = $_POST['billing']['email'];
+    // 	$data['billing_country'] = 'India';
+    	    	
+    // 	$data['shipping_name'] = $_POST['shipping']['name'];
+    // 	$data['shipping_city'] = $_POST['shipping']['city'];
+    // 	$data['shipping_state'] = $_POST['shipping']['state'];
+    // 	$data['shipping_zip'] = $_POST['shipping']['pin_code'];
+    // 	$data['shipping_tel'] = $_POST['shipping']['contact'];
+    // 	$data['shipping_email'] = $_POST['shipping']['email'];
 		if($pay_method == 'payu'){
-			paymentViaCurl($data);
+			paymentViaCurl($data,$postData);
 		} else {
 			print_r($data); die;
 			return false;
@@ -119,14 +137,49 @@ function validatePayment($params)
 	}
 }
 //  Custom Payment Funcction
-function paymentViaCurl($params)
+function paymentViaCurl($params,$postData)
 {
+//     $merchant_id = '213792';
+//     $access_code = 'AVXO84GD39AB15OXBA';
+// 	$working_key = '450AF60F2C9E76880A4EF1DB01B7E338';
+//     $currency = 'INR';
+    ?>
+	<!--<html>-->
+	<!--	<head>-->
+	<!--	<title> CCAvenue Payment Gateway Integration kit</title>-->
+	<!--	</head>-->
+	<!--	<body>-->
+	<!--<center>-->
+	<?php
+// 	$data ='order_id='.$params['udf1'].'&amount='.$params['amount'].'&merchant_id='.$merchant_id.'&currency='.$currency.'&billing_address='.$params['billing_address'].'&shipping_address='.$params['shipping_address'].'&billing_name='.$params['billing_name'].'&billing_city='.$params['billing_city'].'&billing_state'.$params['billing_state'].'&billing_zip='.$params['billing_zip'].'&billing_tel='.$params['billing_tel'].'&billing_email='.$params['billing_email'].'&billing_country='.$params['billing_country'];	
+// 	$merchant_data = '';
+	
+// 	foreach($postData as $key=>$value){
+// 		$merchant_data = $merchant_data.$key.'='.urlencode($value).'&';
+// 	}
+// 	$merchant_data = $merchant_data.$data;
+    // print_r($merchant_data);
+    // exit;
+// 	$encryptedData = encrypt($merchant_data,$working_key);
+
+	?>
+	<!--<form method="post" name="redirect" action="https://secure.ccavenue.com/transaction/transaction.do?command=initiateTransaction"> -->
+	<?php
+// 		echo "<input type=hidden name=encRequest value=$encryptedData>";
+// 		echo "<input type=hidden name=access_code value=$access_code>";
+	?>
+	<!--</form>-->
+	<!--</center>-->
+	<!--	<script language='javascript'>document.redirect.submit();</script>-->
+	<!--</body>-->
+	<!--</html>-->
+	<?php
 	$MERCHANT_KEY = $params['key'] = "iv4QGyUB";
 	$SALT  = "yVIDqF7RoW";
 	$myData['service_provider'] = 'payu_paisa';
 	// Merchant Key and Salt as provided by Payu.
 
-	// $PAYU_BASE_URL = "https://sandboxsecure.payu.in";		// For Sandbox Mode
+	 //$PAYU_BASE_URL = "https://sandboxsecure.payu.in";		// For Sandbox Mode
 	$PAYU_BASE_URL = "https://secure.payu.in";			// For Production Mode
 	// $PAYU_BASE_URL = "https://test.payu.in";
 	$hashSequence = "key|txnid|amount|productinfo|firstname|email|udf1|udf2|udf3|udf4|udf5|udf6|udf7|udf8|udf9|udf10";
@@ -152,4 +205,52 @@ function paymentViaCurl($params)
                 });
 			  </script>';
 		exit;
+}
+
+function encrypt($plainText,$key)
+{
+	$secretKey = hextobin(md5($key));
+    $initVector = pack("C*", 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f);
+    $encryptedText = openssl_encrypt($plainText, "AES-128-CBC", $secretKey, OPENSSL_RAW_DATA, $initVector);
+    $encryptedText = bin2hex($encryptedText);
+    return $encryptedText;
+}
+
+function decrypt($encryptedText,$key)
+{
+    $secretKey         = hextobin(md5($key));
+    $initVector         =  pack("C*", 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f);
+    $encryptedText      = hextobin($encryptedText);
+    $decryptedText         =  openssl_decrypt($encryptedText,"AES-128-CBC", $secretKey, OPENSSL_RAW_DATA, $initVector);
+    return $decryptedText;
+}
+
+function hextobin($hexString) 
+ { 
+	$length = strlen($hexString); 
+	$binString="";   
+	$count=0; 
+	while($count<$length) 
+	{       
+	    $subString =substr($hexString,$count,2);           
+	    $packedString = pack("H*",$subString); 
+	    if ($count==0)
+	    {
+			$binString=$packedString;
+	    } 
+	    
+	    else 
+	    {
+			$binString.=$packedString;
+	    } 
+	    
+	    $count+=2; 
+	} 
+        return $binString; 
+  } 
+  
+function pkcs5_pad ($plainText, $blockSize)
+{
+   $pad = $blockSize - (strlen($plainText) % $blockSize);
+   return $plainText . str_repeat(chr($pad), $pad);
 }

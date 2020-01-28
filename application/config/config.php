@@ -25,8 +25,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $port = !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' ? 'https://' : 'http://';
-// $config['base_url'] = $port.$_SERVER['HTTP_HOST'].'/';
-$config['base_url'] = 'http://localhost/frinza/';
+$config['base_url'] = $port.$_SERVER['HTTP_HOST'].'/';
+// $config['base_url'] = 'http://www.frinza.com/';
 define('FOLDER_ASSETS',$config['base_url'].'assets/');
 define('FOLDER_ASSETS_TEMPLATEDATA',FOLDER_ASSETS.'templatedata/');
 define('PLACEHOLDER_IMAGE',FOLDER_ASSETS_TEMPLATEDATA.'images/frinza.png');

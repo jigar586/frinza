@@ -1,15 +1,15 @@
 <?php 
-    $i = 0;
-    foreach ($timeSlots as $ts) {
+$i = 0;
+foreach ($timeSlots as $ts) {
 
-        $cDate = $date.' '.$ts->end_time;
-        if ($ts->end_time == '12:00 AM') {
-            $cDate = $date.' '.'24:00';
-        }
-    $ctdate = strtotime($cDate);
+    $cDate = $date.' '.$ts->end_time;
+    if ($ts->end_time == '12:00 AM') {
+        $cDate = $date.' '.'24:00';
+    }
+   $ctdate = strtotime($cDate);
     if ($ctdate > strtotime(date('Y-m-d H:i:s',strtotime('+'.$time_gap)))) {
         $i++;
-?>
+         ?>
         <div class="form-group clearfix text-center">
             <input type="radio" name="timing" value="<?= $ts->timing_id ?>" id="timeslot<?= $ts->timing_id ?>" autocomplete="off" style="display: none;"/>
             <div class="btn-group timelabels">

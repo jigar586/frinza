@@ -70,7 +70,7 @@
 
                         <?php if($icons[0]->banner_type == 'icon'){ ?>
                             <section class="noMargin">
-                                <div class="brand-logo">
+                                <div class="brand-logo"> 
                                     <div class="container">
                                         <div class="slider-items-products">
                                             <div id="productList-products-slider" class="product-flexslider hidden-buttons" style="margin-bottom: 0;">

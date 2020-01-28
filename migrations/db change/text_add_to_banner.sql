@@ -1,1 +1,0 @@
-ALTER TABLE `banner_mst` CHANGE `banner_type` `banner_type` ENUM('full','icon','text') CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT 'full';

@@ -1,16 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Headerlinks -->
-
 <?php include('includes/headerlinks.php') ?>
 <body>
-<style>
-		.select2-selection__rendered{
-		display: inline-block;
-    max-height: 250px !important;
-    overflow: scroll;
-		}
-		</style>
 	<!-- Main navbar -->
 	<?php include('includes/header.php') ?>
 	<!-- /main navbar -->
@@ -169,18 +161,18 @@
 												<div class="form-group row">
 													<label class="col-form-label col-lg-2">Available in:</label>
 													<div class="col-lg-8">
-														<select class="form-control select select citysel" data-placeholder="Select Cities..." name="avail_at[]" multiple="multiple" data-fouc style="max-height: 250px;overflow: scroll;">
+														<select class="form-control select citysel" data-placeholder="Select Cities..." name="avail_at[]" multiple="multiple" data-fouc id="availableAt">
 															
 															<?php
 															foreach ($states as $r) { ?>
-																<optgroup label="<?= $r->state_name ?>">
+																<!-- <optgroup label="<?= $r->state_name ?>"> -->
 																	<?php
 																	$cond['state_id'] = $r->state_id;
 																	$city = $this->cities->getCity($cond);
 																	foreach ($city as $cc) { ?>
 																		<option value="<?= $cc->city_id ?>" <?php echo @in_array($cc->city_id, $avail_at) ? 'selected' : '' ?>><?= $cc->city_name ?></option>
 																		<?php  } ?>
-																	</optgroup>
+																	<!-- </optgroup> -->
 																	<?php  } ?>
 																</select>
 															</div>
@@ -198,7 +190,7 @@
 														<div class="form-group row">
 															<label class="col-form-label col-lg-2">Product Description:</label>
 															<div class="col-lg-8">
-																<textarea rows="3" cols="3" maxlength="100" class="form-control" name="product_desc" placeholder="Product Description"><?= @$prodesc ?></textarea>
+																<textarea rows="3" cols="3" maxlength="1000" class="form-control" name="product_desc" placeholder="Product Description"><?= @$prodesc ?></textarea>
 															</div>
 														</div>
 														<div class="form-group row">
@@ -207,8 +199,8 @@
 																<input type="number" class="form-control" name="order_slot" placeholder="" value="<?= @$order_slot[0] ? @$order_slot[0] : 3 ?>">
 															</div>
 															<div class="col-lg-4">
-																<select class="form-control select" multiple id="" name="order_slot_type">
-	[]																<option value="hours" <?=  @$order_slot[1] != 'days' ? 'selected' : '' ?>>Hours</option>
+																<select class="form-control" name="order_slot_type">
+																	<option value="hours" <?=  @$order_slot[1] != 'days' ? 'selected' : '' ?>>Hours</option>
 																	<option value="days" <?= @$order_slot[1] == 'days' ? 'selected' : '' ?>>Days</option>
 																</select>
 															</div>
@@ -243,79 +235,6 @@
 															<input type="text" name="pincode_block" class="form-control tokenfield" placeholder="Add Blocked Pincodes" value="<?= @$pincode_block ?>" data-fouc>
 															</div>
 														</div>
-
-
-
-
-
-														<div class="form-group row">
-															<label class="col-form-label col-lg-2">age:</label>
-															<div class="col-lg-8">
-																<select class="form-control select" multiple id="selectAge" name="age_type[]">
-																	<option value="1" <?=  @$age[1] == '1' ? 'selected' : '' ?>>1</option>
-																	<option value="2" <?= @$age[1] == '2' ? 'selected' : '' ?>>2</option>
-																</select>
-															</div>
-														</div>
-
-														<div class="form-group row">
-															<label class="col-form-label col-lg-2">Recipient Type:</label>
-															<div class="col-lg-8">
-																<select class="form-control select" multiple id="selectRecipient" name="recipient_type[]">
-																	<option value="men" <?=  @$recipient[1] == 'men' ? 'selected' : '' ?>>Men</option>
-																	<option value="women" <?= @$recipient[1] == 'women' ? 'selected' : '' ?>>Women</option>
-																	<option value="teens" <?= @$recipient[1] == 'teens' ? 'selected' : '' ?>>Teens</option>
-																	<option value="kids_infants" <?= @$recipient[1] == 'kids_infants' ? 'selected' : '' ?>>Kids & Infants</option>
-																	<option value="couples" <?= @$recipient[1] == 'couples' ? 'selected' : '' ?>>Couples</option>
-																</select>
-															</div>
-														</div>
-
-														<div class="form-group row">
-															<label class="col-form-label col-lg-2">Profession:</label>
-															<div class="col-lg-8">
-																<select class="form-control select" multiple id="selectProfession" name="profession_type[]">
-																	<option value="profession1" <?=  @$Profession[1] == 'profession1' ? 'selected' : '' ?>>Profession 1</option>
-																	<option value="profession2" <?= @$Profession[1] == 'profession2' ? 'selected' : '' ?>>Profession 2</option>
-																</select>
-															</div>
-														</div>
-
-														<div class="form-group row">
-															<label class="col-form-label col-lg-2">Personality:</label>
-															<div class="col-lg-8">
-																<select class="form-control select" multiple id="selectPersonality" name="personality_type[]">
-																	<option value="Personality1" <?=  @$Personality[1] == 'Personality1' ? 'selected' : '' ?>>Personality 1</option>
-																	<option value="Personality2" <?= @$Personality[1] == 'Personality2' ? 'selected' : '' ?>>Personality 2</option>
-																</select>
-															</div>
-														</div>
-
-														<div class="form-group row">
-															<label class="col-form-label col-lg-2">Relationship:</label>
-															<div class="col-lg-8">
-																<select class="form-control select" multiple id="selectRelationship" name="relationship_type[]">
-																	<option value="Relationship1" <?=  @$Relationship[1] == 'Relationship1' ? 'selected' : '' ?>>Relationship 1</option>
-																	<option value="Relationship2" <?= @$Relationship[1] == 'Relationship2' ? 'selected' : '' ?>>Relationship 2</option>
-																</select>
-															</div>
-														</div>
-
-														<div class="form-group row">
-															<label class="col-form-label col-lg-2">Closeness:</label>
-															<div class="col-lg-8">
-																<select class="form-control select" multiple id="selectCloseness" name="closeness_type[]">
-																	<option value="Closeness1" <?=  @$Closeness[1] == 'Closeness1' ? 'selected' : '' ?>>Closeness 1</option>
-																	<option value="Closeness2" <?= @$Closeness[1] == 'Closeness2' ? 'selected' : '' ?>>Closeness 2</option>
-																</select>
-															</div>
-														</div>
-
-
-
-
-
-
 														<div class="form-group row"> 
 															<label class="col-form-label col-lg-2">Addon Category</label>
 															<div class="col-lg-8">
@@ -395,7 +314,7 @@
 																					<input type="text" class="form-control charge_amount" name="charge_amount<?= $i ?>" placeholder="Enter Amount to Charge" required title="Amount to Charge" value='<?= @$extraCharges[$i]->charge_amount ?>'>
 																				</td>
 																				<td>
-																					<select class="form-control select form-control-uniform charge_type" name="charge_type<?= $i ?>" data-fouc required title="Type of Charge">
+																					<select class="form-control form-control-uniform charge_type" name="charge_type<?= $i ?>" data-fouc required title="Type of Charge">
 																						<option value="1" <?= @$extraCharges[$i]->charge_type == 1 ? 'selected' : '' ?>>₹ Flat</option>
 																						<option value="2" <?= @$extraCharges[$i]->charge_type == 2 ? 'selected' : '' ?>>% Perc</option>
 																					</select>
@@ -448,13 +367,89 @@
 			<script src="<?= FOLDER_ASSETS_ADMINDATA ?>js/plugins/forms/tags/tokenfield.min.js"></script>
 			<script type="text/javascript">
 				$(document).ready(function(){
-					
-					$('#selectAge').select2();
-					$('#selectRecipient').select2();
-					$('#selectProfession').select2();
-					$('#selectPersonality').select2();
-					$('#selectRelationship').select2();
-					$('#selectCloseness').select2();
+
+					var scrollTopA;
+					var scrollTopB;
+					var scrollTopC;
+					var scrollTopD;
+					$('#availableAt, #multiSelectChildCat, #multiSelectSubCat, #multiSelectCat').select2({closeOnSelect: false});
+					// $('#availableAt').on("select2:open", function( event ){
+					// 	console.log(event);
+					// 	var $pr = $( '#'+event.params.args.data._resultId ).parent();
+					// 	$pr.prop('scrollTop', $pr.prop('scrollTop') );
+					// });
+					$('#availableAt').on("select2:selecting", function( event ){
+
+
+					    var $pr = $( '#'+event.params.args.data._resultId ).parent();
+					    console.log($pr);
+					    scrollTopA = $pr.prop('scrollTop');
+					});
+					$('#availableAt').on("select2:select", function( event ){
+					    var $pr = $( '#'+event.params.data._resultId ).parent();
+					    $pr.prop('scrollTop', scrollTopA );
+					});
+					$('#availableAt').on("select2:unselecting", function( event ){
+					    var $pr = $( '#'+event.params.args.data._resultId ).parent();
+					    scrollTopA = $pr.prop('scrollTop');
+					});
+					$('#availableAt').on("select2:unselect", function( event ){
+					    var $pr = $( '#'+event.params.data._resultId ).parent();
+					    $pr.prop('scrollTop', scrollTopA );
+					});
+					$('#multiSelectChildCat').on("select2:selecting", function( event ){
+					    var $pr = $( '#'+event.params.args.data._resultId ).parent();
+					    scrollTopB = $pr.prop('scrollTop');
+					});
+					$('#multiSelectChildCat').on("select2:select", function( event ){
+					    var $pr = $( '#'+event.params.data._resultId ).parent();
+					    $pr.prop('scrollTop', scrollTopB );
+					});
+					$('#multiSelectChildCat').on("select2:unselecting", function( event ){
+					    var $pr = $( '#'+event.params.args.data._resultId ).parent();
+					    scrollTopB = $pr.prop('scrollTop');
+					});
+					$('#multiSelectChildCat').on("select2:unselect", function( event ){
+					    var $pr = $( '#'+event.params.data._resultId ).parent();
+					    $pr.prop('scrollTop', scrollTopB );
+					});
+					$('#multiSelectSubCat').on("select2:selecting", function( event ){
+					    var $pr = $( '#'+event.params.args.data._resultId ).parent();
+					    scrollTopC = $pr.prop('scrollTop');
+					});
+					$('#multiSelectSubCat').on("select2:select", function( event ){
+					    var $pr = $( '#'+event.params.data._resultId ).parent();
+					    $pr.prop('scrollTop', scrollTopC );
+					});
+					$('#multiSelectSubCat').on("select2:unselecting", function( event ){
+					    var $pr = $( '#'+event.params.args.data._resultId ).parent();
+					    scrollTopC = $pr.prop('scrollTop');
+					});
+					$('#multiSelectSubCat').on("select2:unselect", function( event ){
+					    var $pr = $( '#'+event.params.data._resultId ).parent();
+					    $pr.prop('scrollTop', scrollTopC );
+					});
+					$('#multiSelectCat').on("select2:selecting", function( event ){
+					    var $pr = $( '#'+event.params.args.data._resultId ).parent();
+					    scrollTopD = $pr.prop('scrollTop');
+					});
+					$('#multiSelectCat').on("select2:select", function( event ){
+					    var $pr = $( '#'+event.params.data._resultId ).parent();
+					    $pr.prop('scrollTop', scrollTopD );
+					});
+					$('#multiSelectCat').on("select2:unselecting", function( event ){
+					    var $pr = $( '#'+event.params.args.data._resultId ).parent();
+					    scrollTopD = $pr.prop('scrollTop');
+					});
+					$('#multiSelectCat').on("select2:unselect", function( event ){
+					    var $pr = $( '#'+event.params.data._resultId ).parent();
+					    $pr.prop('scrollTop', scrollTopD );
+					});
+
+					// $(".select2-search, .select2-focusser").remove();
+					// $('#availableAt, #multiSelectChildCat, #multiSelectSubCat, #multiSelectCat').on('select2:closing',function(event){
+					// 	$(".select2-search, .select2-focusser").remove();
+					// });
 
 					$('select[name=addoncategory_id]').change(function(){
 						if( $(this).val() != 0 ){
@@ -462,19 +457,25 @@
 						}else{
 							$('.tblVariation').show();
 						}
-					})
+					});
 
 					$('.tokenfield').tokenfield();
 
 					$('#insertProductForm').on('submit',function(e){
 						e.preventDefault();
-						var formData = new FormData(this);
+						var formValues = new FormData(this);
+						// count = 0;
+						// for ( var value of formValues.values())
+						// {
+						// 	count++;
+						// }
+						// console.log(count);
 						$.ajax({
 							url: '<?= base_url('admin/insertproduct') ?>',
 							type: 'post',
 							processData: false,
 							contentType: false,
-							data: formData,
+							data: formValues,
 							success: function(a){
 								$('.myMsg').html(a);
 								
@@ -505,7 +506,8 @@
 							$('#multiSelectChildCat').select2({
 								placeholder: 'Select Child Category',
 								minimumResultsForSearch: Infinity,
-								data: a
+								data: a,
+								closeOnSelect: false
 							});
 							callback();
 						}
@@ -525,7 +527,8 @@
 							$('#multiSelectSubCat').select2({
 								placeholder: 'Select Sub Category',
 								minimumResultsForSearch: Infinity,
-								data: a
+								data: a,
+								closeOnSelect: false
 							});
 							callback();
 						}
@@ -555,7 +558,7 @@
 							<input type="text" class="form-control charge_amount" name="charge_amount`+rowCount+`" placeholder="Enter Amount to Charge" required title="Amount to Charge">
 						</td>
 						<td>
-							<select class="form-control select-uniform charge_type" name="charge_type`+rowCount+`" required title="Type of Charge">
+							<select class="form-control-uniform charge_type" name="charge_type`+rowCount+`" required title="Type of Charge">
 								<option value="1">₹ Flat</option>
 								<option value="2">% Perc</option>
 							</select>
@@ -598,7 +601,6 @@
 						});
 						
 					});
-					
 				</script>
 				<?php } ?>
 			</body>

@@ -277,4 +277,23 @@ Class Facebook
     public function __get($var){
         return get_instance()->$var;
     }
+
+    public function user_friend_list(){
+        // echo $this->session->userdata('fb_access_token'); die;
+        try {
+			$response = $this->fb->get(
+			  '/665371227287516/friends',
+			  'EAAKlJk3MqXcBAMotrMVebHmbut0ubZBTjFiBfEQsHOTEfYSyziWlSSGXtQ3g6JkDdeCZBhbjHfpBVD7aY5IMPIZAkdCYWemSe9csxiChtDyfe4QwYqDvqVZBIqktVOhanixSzAmNYJLNfCAR5si98k1VfwpS3qdXyFSmN7RgKrcvTZBDYnZCe4JHeL8jExH8yy1e0wlDBJOQZDZD'
+            );
+            print_r($response); die;
+        } catch(Facebook\Exceptions\FacebookResponseException $e) {
+        echo 'Graph returned an error: ' . $e->getMessage();
+        exit;
+        } catch(Facebook\Exceptions\FacebookSDKException $e) {
+        echo 'Facebook SDK returned an error: ' . $e->getMessage();
+        exit;
+        }
+        $graphNode = $response->getGraphNode(); 
+        return $graphNode ;
+    }
 }

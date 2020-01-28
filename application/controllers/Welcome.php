@@ -8,7 +8,6 @@ class Welcome extends CI_Controller {
 		// $this->db->query("ALTER TABLE `subcategory_mst` ADD `subcategory_title` VARCHAR(5000) NULL DEFAULT NULL AFTER `subcategory_name`;");
 		// $this->session->set_flashdata('OrderData',72);
 			// redirect(base_url('thankyou'));
-			echo "true"; die;
 		print_r($this->db->get('user_wallet')->result_array());
 		// $data['user_id'] = 363;
 		// $data['order_id'] = 0;
@@ -19,9 +18,10 @@ class Welcome extends CI_Controller {
 		// $this->db->where('txn_id',167);
 		// $this->db->delete('user_wallet');
 	}
-
+	
 	function getFriendList(){
 		$this->load->library('Facebook');
 		$data = $this->facebook->user_friend_list();
+		print_r($data); die;
 	}
 }

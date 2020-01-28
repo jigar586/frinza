@@ -1,1 +1,0 @@
-ALTER TABLE `childcategory_mst` ADD `is_display` INT(11) NOT NULL DEFAULT '1' AFTER `is_active`;

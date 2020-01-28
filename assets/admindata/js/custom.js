@@ -98,17 +98,3 @@ jQuery(document).ready( function($) {
     });  
       
 });
-
-function openModal(url, title, size = 'md') {
-    $('#dynamicModal .modal-body').html('');
-    $('#dynamicModal .modal-dialog').removeClass().addClass('modal-dialog modal-'+size);
-    $('#dynamicModal .modal-title').text(title);
-	$('#dynamicModal').modal('show');
-    $.ajax({
-        url: url,
-        type: 'get'
-    })
-    .done(function(html) {
-        $('#dynamicModal .modal-body').html(html);
-    });
-}

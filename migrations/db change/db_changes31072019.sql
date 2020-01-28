@@ -1,1 +1,0 @@
-ALTER TABLE `product_mst` ADD `pincode_block` LONGTEXT NULL DEFAULT NULL AFTER `product_desc`;

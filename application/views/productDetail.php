@@ -209,7 +209,7 @@
 															<div class="input-group">
 																<input type="hidden" name="citysec" class="citysel">
 																<span class="input-group-addon pincode"><i class="fa fa-map-marker"></i></span>
-																<input type="number" class="input-text pincode" maxlength="6" title="Pincode" id="pincode" placeholder="Enter Pincode" name="pincode" style="margin: 0;">
+																<input type="text" class="input-text pincode"  title="Pincode" id="pincode" placeholder="Enter Pincode" name="pincode" style="margin: 0;">
 																<button type="button" id="btnVerify" class="button btn-continue" onclick="pincodeVerify()" style="padding:15px 15px 12px 15px;">Check</button>
 																<button type="button" id="btnChange" class="button btn-continue" onclick="pincodechange()" style="padding:15px 15px 12px 15px;">change</button>
 															</div>
@@ -875,24 +875,24 @@
 	}
 	function pincodeVerify() {
 		var pincode = $('#pincode').val();
-		if(pincode.length != 6){
-			Toast.fire({
-				type: 'error',
-				title: 'Please enter proper Pincode!'
-			});
-			return false;
-		}
+		// if(pincode.length != 6){
+		// 	Toast.fire({
+		// 		type: 'error',
+		// 		title: 'Please enter proper Pincode!'
+		// 	});
+		// 	return false;
+		// }
 		$('#pincode').attr('disabled',true);		
 		var pincode = $('#pincode').val();
 		if($('.citysel').val()) {
 			$('.citysel').val('').change();
 		}
-		if (pincode.length != 6) {
-			$('.pincode').css({
-				"outline": "1px solid red"
-			});			
-			return false;
-		}
+		// if (pincode.length != 6) {
+		// 	$('.pincode').css({
+		// 		"outline": "1px solid red"
+		// 	});			
+		// 	return false;
+		// }
 
 		var chkPin = '<?= $product[0]->pincode_block ?>';
 		if(chkPin.indexOf(pincode+',') > -1){

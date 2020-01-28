@@ -12,7 +12,7 @@
   <!-- Navigation -->
  <?php include_once('includes/navigation.php') ?>
   <!-- end nav -->
-  
+
   <!-- main-container --> 
   <div class="main-container col2-right-layout">
     <div class="main container">

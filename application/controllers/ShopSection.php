@@ -697,12 +697,14 @@ class ShopSection extends CI_Controller {
 	}
 	
 	function confirmOrder(){
+	    
 		$this->load->helper('payment'); 
 		if ($this->input->post('place_order')) {
 			$fillable = ['name','last_name','contact','email','address_1','address_2','pin_code','city','state'];
 			$sameAdd = $this->input->post('sameAdd');
 			$billing = $this->input->post('billing');
 			$pay_method = $this->input->post('payment_method');
+			
 			for ($i=0; $i < count($fillable); $i++) { 
 				$address_data[$fillable[$i]] = $billing[$fillable[$i]];
 			}
@@ -745,15 +747,19 @@ class ShopSection extends CI_Controller {
 			} 
 			$walletpay = $this->input->post('walletpay');
 			$cardMSG = $this->input->post('msg_card');
+			
 			if (payForOrder($walletpay,$billAdd,$shipAdd,$cardMSG, $pay_method)) {
+			    
 				goto skipPayValidation;
 			}else{
 				die();
 			}
 		}
+		
 		validatePayment($this->input->post());
 		skipPayValidation:
 		$cart = getCartData();
+		
 		$data['txn_id'] = $this->input->post('txnid');
 		$data['payment_detail'] = json_encode($this->input->post());
 		$data['billing_ad'] = $this->input->post('udf1');
@@ -761,9 +767,11 @@ class ShopSection extends CI_Controller {
 		$data['msg_card'] = $this->input->post('udf3');
 		$data['amount'] = getShippingTotal() + getCartTotal();
 		$data['ship_price'] = getShippingTotal();
+	
 		$data['payment_status'] = 1;
 		$data['user'] = $CashbackData['user_id'] = $_SESSION['loggedUser'];
 		$result = $this->shop->insertOrder($data);
+		
 		
 		if ($result) {
 			$batch['order_id'] = $this->db->insert_id();

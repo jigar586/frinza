@@ -470,7 +470,7 @@ $wallet = UserWallet();
 		function applyCoupon(arg, mob = '') {
 			var coupon = $('input#coupon_code' + mob + arg).val();
 			$.ajax({
-				url: '<?= base_url('cart/ applycoupon') ?>',
+				url: '<?= base_url('cart/applycoupon') ?>',
 				data: {
 					coupon_code: coupon,
 					id: arg

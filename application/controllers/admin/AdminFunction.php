@@ -707,7 +707,7 @@ class AdminFunction extends CI_Controller {
 		$data['avail_at'] = json_encode($this->input->post('avail_at'));
 		$data['meta_keyword'] = $this->input->post('metakey');
 		$hdnID = $this->input->post('product_id');
-		if (in_array('', $data) || (@in_array(4, $_FILES['product_img']['error']) && $hdnID == '')) {
+		if (in_array('', $data)/* || (@in_array(4, $_FILES['product_img']['error']) && $hdnID == '')*/) {
 			echo "<p style='color:red'>All Fields are necessary!!</p>";
 			exit();
 		}
@@ -721,14 +721,6 @@ class AdminFunction extends CI_Controller {
 		$data['meta_description'] = $this->input->post('metadec');
 		$data['is_personalize'] = $this->input->post('is_personalize') ? 1 : 0;
 		$data['is_courier'] = $this->input->post('is_courier') ? 1 : 0;
-
-		$data['age_type'] = json_encode($this->input->post('age_type'));
-		$data['recipient_type'] = json_encode($this->input->post('recipient_type'));
-		$data['profession_type'] = json_encode($this->input->post('profession_type'));
-		$data['personality_type'] = json_encode($this->input->post('personality_type'));
-		$data['relationship_type'] = json_encode($this->input->post('relationship_type'));
-		$data['closeness_type'] = json_encode($this->input->post('closeness_type'));
-
 		$config = array(
 			'upload_path'   => realpath(FOLDER_ASSETS_PRODUCTUPLOAD),
 			'allowed_types' => 'gif|jpg|png',
